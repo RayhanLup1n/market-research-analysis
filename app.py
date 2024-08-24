@@ -23,12 +23,12 @@ selected_segments = st.sidebar.multiselect("Select Segments", options=['Consumer
 
 # Load trained models
 with st.spinner('Loading models...'):
-    final_rf_model = joblib.load('/mnt/data/Random_Forest_Model.pkl')
-    final_gb_model = joblib.load('/mnt/data/Gradient_Boosting_Model.pkl')
+    final_rf_model = joblib.load('./Random_Forest_Model.pkl')
+    final_gb_model = joblib.load('./Gradient_Boosting_Model.pkl')
 
 # Load dataset
 with st.spinner('Loading dataset...'):
-    df = pd.read_excel("/mnt/data/Market Research.xlsx")
+    df = pd.read_excel("./Market Research.xlsx")
 
 # Data Preprocessing
 df['Year'] = df['Order Date'].dt.year
