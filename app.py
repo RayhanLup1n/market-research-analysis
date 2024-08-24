@@ -134,4 +134,4 @@ st.pyplot(fig)
 
 # Footer
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("Created by [Your Name] - Powered by Streamlit", unsafe_allow_html=True)
+st.markdown("Created by Rayhan Ananda Resky - Powered by Streamlit", unsafe_allow_html=True)
