@@ -1,5 +1,3 @@
-Tentu! Berikut adalah versi lengkap dari README.md yang bisa Anda salin langsung:
-
 ```markdown
 ## 📊 Market Research Analysis Dashboard
 
