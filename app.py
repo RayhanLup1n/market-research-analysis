@@ -23,12 +23,12 @@ selected_segments = st.sidebar.multiselect("Select Segments", options=['Consumer
 
 # Load the trained models
 with st.spinner('Loading models...'):
-    final_rf_model = joblib.load('C:/Users/rayha/OneDrive/Dokumen/Porfolio/2024/Agustus/Sample - Superstore/Random_Forest_Model.pkl')
-    final_gb_model = joblib.load('C:/Users/rayha/OneDrive/Dokumen/Porfolio/2024/Agustus/Sample - Superstore/Gradient_Boosting_Model.pkl')
+    final_rf_model = joblib.load('/mnt/data/Random_Forest_Model.pkl')
+    final_gb_model = joblib.load('/mnt/data/Gradient_Boosting_Model.pkl')
 
 # Load the dataset
 with st.spinner('Loading dataset...'):
-    df = pd.read_excel("C:/Users/rayha/OneDrive/Dokumen/Porfolio/2024/Agustus/Sample - Superstore/Market Research.xlsx")
+    df = pd.read_excel("/mnt/data/Market Research.xlsx")
 
 # Data Preprocessing
 df['Year'] = df['Order Date'].dt.year
@@ -41,12 +41,8 @@ encode = LabelEncoder()
 for col in object_coll:
     if col in df_filtered.columns:
         df_filtered[col] = encode.fit_transform(df_filtered[col])
-    # Hapus atau komentari baris berikut untuk menghilangkan peringatan
-    # else:
-    #    st.warning(f"Column '{col}' is missing from the dataset and will be skipped.")
 
 # Prepare the data for scaling and prediction
-# Only include columns that are present in df_filtered
 columns_to_use = ['Category', 'City', 'Region', 'Segment', 'SubCategory']
 
 # Check if 'SubCategory' is missing and add a placeholder if necessary
